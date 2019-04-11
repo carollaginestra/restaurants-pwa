@@ -22,7 +22,7 @@ initMap = () => {
         scrollWheelZoom: false
       });
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
-        mapboxToken: '<your MAPBOX API KEY HERE>',
+        mapboxToken: 'pk.eyJ1IjoibGFnaW5lc3RyYSIsImEiOiJjanVjOXZyNmkwaWhiNGVxcnRyNjgxbHd2In0.qRwUHFn1loybGAebUQkhag',
         maxZoom: 18,
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
           '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -34,22 +34,6 @@ initMap = () => {
     }
   });
 }  
- 
-/* window.initMap = () => {
-  fetchRestaurantFromURL((error, restaurant) => {
-    if (error) { // Got an error!
-      console.error(error);
-    } else {
-      self.map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 16,
-        center: restaurant.latlng,
-        scrollwheel: false
-      });
-      fillBreadcrumb();
-      DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
-    }
-  });
-} */
 
 /**
  * Get current restaurant from page URL.
@@ -148,21 +132,27 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
-  const name = document.createElement('p');
-  name.innerHTML = review.name;
-  li.appendChild(name);
+  const date = document.createElement('div');
+  const name = document.createElement('div');
+  const div = document.createElement('div');
 
-  const date = document.createElement('p');
+  li.appendChild(div);
+  div.classList.add("review-header");
+  name.innerHTML = review.name;
+  div.appendChild(name);
+  div.appendChild(date);
   date.innerHTML = review.date;
-  li.appendChild(date);
+  date.classList.add("date");
 
   const rating = document.createElement('p');
+  rating.classList.add("rating");
   rating.innerHTML = `Rating: ${review.rating}`;
   li.appendChild(rating);
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
   li.appendChild(comments);
+
 
   return li;
 }
