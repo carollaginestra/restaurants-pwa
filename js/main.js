@@ -32,6 +32,8 @@ fetchNeighborhoods = () => {
  */
 fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
   const select = document.getElementById('neighborhoods-select');
+  select.setAttribute('aria-label', 'Neighborhoods filter');
+
   neighborhoods.forEach(neighborhood => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
@@ -59,6 +61,7 @@ fetchCuisines = () => {
  */
 fillCuisinesHTML = (cuisines = self.cuisines) => {
   const select = document.getElementById('cuisines-select');
+  select.setAttribute('aria-label', 'Cuisines filter');
 
   cuisines.forEach(cuisine => {
     const option = document.createElement('option');
@@ -88,18 +91,6 @@ initMap = () => {
 
   updateRestaurants();
 }
-/* window.initMap = () => {
-  let loc = {
-    lat: 40.722216,
-    lng: -73.987501
-  };
-  self.map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: loc,
-    scrollwheel: false
-  });
-  updateRestaurants();
-} */
 
 /**
  * Update page and map for current restaurants.
@@ -157,13 +148,14 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
+  li.setAttribute("aria-label", "restaurant information");
+
   const content = document.createElement('div');
   content.classList.add("padding");
-  li.setAttribute("aria-label", "restaurant information");
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.setAttribute("alt", `${restaurant.name} restaurant photo`);
+  image.alt = `${restaurant.name} restaurant photo`;
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
