@@ -72,6 +72,7 @@ nav h1 a {
     font-size: 17px;
     margin: 0;
     width: 100%;
+    box-sizing: border-box;
 }
 
 /* Display list items side by side */
@@ -99,8 +100,7 @@ nav h1 a {
 }
 /* ====================== Map ====================== */
 #map {
-  height: 400px;
-  width: 100%;
+  height: 400px;  width: 100%;
   background-color: #ccc;
 }
 /* ====================== Restaurant Filtering ====================== */
@@ -178,7 +178,7 @@ nav h1 a {
 }
 #restaurants-list li a {
   background-color: orange;
-  border-bottom: 3px solid #eee;
+  border-bottom: 3px solid #ff941d;
   color: #fff;
   display: inline-block;
   font-size: 10pt;
@@ -198,11 +198,10 @@ nav h1 a {
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 100%;
-  position: fixed;
   right: 0;
-  top: 130px;
-  width: 50%;
+  position: relative;
+  width: 100%;
+  height: 270px;
 }
 .inside #map {
   background-color: #ccc;
@@ -211,8 +210,10 @@ nav h1 a {
 }
 .inside #footer {
   bottom: 0;
-  position: absolute;
   width: 50%;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
 }
 #restaurant-name {
   color: #f18200;
@@ -244,13 +245,14 @@ nav h1 a {
   text-transform: uppercase;
 	width: 100%;
 }
+
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 55px;
-  width: 50%;
+  padding: 30px;
   box-sizing: border-box;
-
+  position: relative;
+  width: 100%;
 }
 
 #reviews-container h2 {
@@ -313,8 +315,48 @@ nav h1 a {
   padding: 10px;
 }
 
-@media only screen and (max-width: 992px) {
-  #map-container {
-    width: 100%;
+@media only screen and (max-width: 930px) {
+  #maincontent {
+    margin-top: 130px;
   }
 }
+
+@media (min-width: 931px) {
+  #restaurants-list li {
+    max-width: 30%;
+  }
+  #restaurants-list p {
+    width: 66%;
+  }  
+  #restaurants-list li h1 {
+    height: 41px;
+  }
+
+  .inside header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  .inside #map-container {
+    background: blue none repeat scroll 0 0;
+    height: 88%;
+    position: fixed;
+    right: 0;
+    top: 80px;
+    width: 50%;
+  }
+  #restaurant-container {
+    width: 45%;
+    padding: 140px 40px 30px;
+  }
+  #reviews-container {
+    width: 45%;
+    padding: 40px 30px;
+  }
+
+  #breadcrumb {
+    width: 50%;
+  }
+}
+
