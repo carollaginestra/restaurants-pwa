@@ -7,13 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="shortcut icon" href="img/favicon.png"/>
   <meta name="description" content="This is a project created for Udacity Front-end course.">
-  <meta name="title" content="Restaurant Reviews">
+  <meta name="title" content="Restaurant Reviews - Information">
+  <meta name="theme-color" content="#ff941d"/>
   <!-- Normalize.css for better cross-browser consistency -->
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <!-- Main CSS file -->
   <link rel="stylesheet" href="css/styles.css" type="text/css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
-  <title>Restaurant Info</title>
+  <title>Restaurant Information</title>
 </head>
 
 <body class="inside">
@@ -35,7 +36,7 @@
   <!-- Beginning main -->
   <main id="maincontent">
     <!-- Beginning map -->
-    <section id="map-container" aria-label="Map of restaurants" role="application">
+    <section id="map-container" aria-label="Map of restaurant" role="application">
       <div id="map"></div>
     </section>
     <!-- End map -->
@@ -50,7 +51,7 @@
     <!-- end restaurant -->
     <!-- Beginning reviews -->
     <section id="reviews-container">
-      <ul id="reviews-list" tabindex="0"></ul>
+      <ul id="reviews-list" aria-label="Reviews list" tabindex="0"></ul>
     </section>
     <!-- End reviews -->
   </main>

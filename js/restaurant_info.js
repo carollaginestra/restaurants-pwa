@@ -139,6 +139,7 @@ createReviewHTML = (review) => {
   const div = document.createElement('div');
 
   li.appendChild(div);
+  li.setAttribute("tabindex", "0");
   div.classList.add("review-header");
   name.innerHTML = review.name;
   div.appendChild(name);
