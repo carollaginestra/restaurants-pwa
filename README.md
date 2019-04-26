@@ -25,6 +25,7 @@ $ cd restaurants-pwa
 And init a local client server using Python on your terminal:
 
 Python 2: ``` $ python -m SimpleHTTPServer 8000 ```
+or
 Python 3: ``` $ python3 -m http.server 8000```
 
 Access the site in your browser at:
